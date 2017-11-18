@@ -1,2 +1,2 @@
 # shelob
-An Android library for presenting static web content.
+A simple Android library for viewing static web content.
