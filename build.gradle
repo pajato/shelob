@@ -16,10 +16,6 @@ buildscript {
 }
 
 allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
 
     // Configure the project build directories to be relative to a
     // base build directory if one is defined in, for example, a
