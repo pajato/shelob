@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 27
@@ -39,5 +40,28 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-intents:3.0.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+}
+
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier "source"
+}
+
+publishing {
+    publications {
+        lib(MavenPublication) {
+            groupId 'com.pajato'
+            artifactId 'shelib'
+            version '0.0.1'
+            artifact(sourceJar)
+            artifact("$buildDir/outputs/aar/shelib-release.aar")
+        }
+    }
+    repositories {
+        maven {
+            url "$rootDir/repo"
+        }
+    }
 }
