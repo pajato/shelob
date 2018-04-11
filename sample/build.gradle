@@ -1,6 +1,11 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.pajato.shelob'
+version = "$libraryVersion"
+project.archivesBaseName = 'sample'
 
 android {
     compileSdkVersion 27
