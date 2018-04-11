@@ -5,7 +5,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'com.pajato.shelob'
 version = "$libraryVersion"
-project.archivesBaseName = 'sample'
+//project.archivesBaseName = 'sample'
 
 android {
     compileSdkVersion 27
